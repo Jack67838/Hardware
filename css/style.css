@@ -1,0 +1,39 @@
+body{
+    font-family: Verdana, Geneva, sans-serif;
+    background-color: #F7F7F7;
+}
+.log{
+     width: 100%;
+     max-width: 220px;
+     background-color: #fff;
+     margin: 100px auto 20px;
+     padding: 10px 30px 60px;
+     border-radius: 10px;
+     box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
+}
+.new{
+     width: 100%;
+     max-width: 260px;
+     background-color: #fff;
+     margin: 100px auto 20px;
+     padding: 10px 30px 60px;
+     border-radius: 10px;
+     box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
+}
+table,th,td{
+    padding: 5px 10px;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+.add{
+    padding: 5px 10px;
+}
+.btn{
+    background-color:lightblue;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    padding: 10px 20px;
+    text-decoration: none; 
+    color: inherit;
+}
