@@ -1,47 +1,46 @@
+<?php 
+require '../php/db.php';
+$consulta = "SELECT * FROM hard_disk";
+$resultado = mysqli_query($conn, $consulta);
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>Hardware</title>
+    <title>Hardware - Elenco</title>
     <link rel="stylesheet" href="../css/style.css">
-    <?php include("Hard_Diskphp.php"); ?>
 </head>
 <body>
-    <h1>Hard-Disk</h1>
-    <div style="margin-botton: 20px;">
-    <a href="../menu.html" class='btn'>Menu</a>
-    <a href="add-hard-disk.php" class="btn">Add New Disk</a>
+    <h1>Disco Rigido</h1>
+    <div style="margin-bottom: 20px;">
+        <a href="../menu.html" class='btn'>Menu</a>
+        <a href="add-hard-disk.php" class="btn">Aggiungi nuovo disco</a>
     </div><br>
     <table>
         <thead>
             <tr>
                 <th>Id</th>
                 <th>S/N</th>
-                <th>Space</th>
-                <th>Age</th>
-                <th>Model</th>
+                <th>Spazio</th>
+                <th>Età</th>
+                <th>Modello</th>
+                <th>Azione</th>
             </tr>
         </thead>
         <tbody>
-    <?php 
-    while($row = mysqli_fetch_array($resultado)) { 
-    ?>
-        <tr>
-            <td><?php echo $row['Id']; ?></td>
-            <td><?php echo $row['S/N']; ?></td>
-            <td><?php echo $row['Space']; ?></td>
-            <td><?php echo $row['Age']; ?></td>
-            <td><?php echo $row['Model']; ?></td> 
-            <td>
-                <form action="delete.php" method="GET" style="margin:0;">
-                    <input type="hidden" name="id" value="<?php echo $row['Id']; ?>">
-                    <input type="submit" name="enviar" value="Delete" onclick="return confirm('Confirm to delete');">
-                </form>
-            </td>
-        </tr>
-    <?php 
-    }
-    ?>
+            <?php while($row = mysqli_fetch_array($resultado)) { ?>
+            <tr>
+                <td><?php echo $row['Id']; ?></td>
+                <td><?php echo $row['S/N']; ?></td>
+                <td><?php echo $row['Space']; ?></td>
+                <td><?php echo $row['Age']; ?></td>
+                <td><?php echo $row['Model']; ?></td> 
+                <td>
+                    <a href="db_operations.php?delete_id=<?php echo $row['Id']; ?>" 
+                       onclick="return confirm('Confermi l\'eliminazione?');">Elimina</a>
+                </td>
+            </tr>
+            <?php } ?>
         </tbody>
     </table>
 </body>

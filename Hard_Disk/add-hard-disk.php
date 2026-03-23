@@ -1,36 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Aggiungi Nuovo Disco</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <div class="new">
-    <h1>Add new disk</h1>
-    <form action="add_hard_diskphp.php" method="POST" >
-        <div class="add">
-            <label for="">S/N</label><br>
-            <input type="text" name="S/N" autocomplete="off">
-        </div>
-        <div class="add">
-            <label for="">Space</label><br>
-            <input type="text" name="Space" autocomplete="off"/>
-        </div>
-        <div class="add">
-            <label for="">Age</label><br>
-            <input type="text" name="Age" autocomplete="off"/>
-        </div>
-        <div class="add">
-            <label for="">Model</label><br>
-            <input type="text" name="Model" autocomplete="off"/>
-        </div>
-        <div class="add">
-            <button type="submit" name="save_data" class='btn'>Save Data</button>
-            <a href="Hard_Disk.php" class='btn'>Go back</a>
-        </div>
-    </form>
+        <h1>Aggiungi nuovo disco</h1>
+        <form action="db_operations.php" method="POST">
+            <div class="add">
+                <label>Numero di serie</label><br>
+                <input type="text" name="S/N" required autocomplete="off">
+            </div>
+            <div class="add">
+                <label>Spazio</label><br>
+                <input type="text" name="Space" required autocomplete="off"/>
+            </div>
+            <div class="add">
+                <label>Età / Anno</label><br>
+                <input type="text" name="Age" required autocomplete="off"/>
+            </div>
+            <div class="add">
+                <label>Modello</label><br>
+                <input type="text" name="Model" required autocomplete="off"/>
+            </div>
+            <div class="add">
+                <button type="submit" name="save_data" class='btn'>Salva Dati</button><br><br>
+                <a href="Hard_Disk.php" class='btn'>Torna indietro</a>
+            </div>
+        </form>
     </div>
 </body>
 </html>

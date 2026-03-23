@@ -38,3 +38,13 @@ CREATE TABLE `hard_disk` (
 
 INSERT INTO `hard_disk` (`Id`, `S/N`, `Space`, `Age`, `Model`) VALUES
 (1, 'WCAV2AD11035', '320GB', '9543H', 'Western Digital');
+
+CREATE TABLE `pc` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `PC` varchar(50) NOT NULL,
+  `RAM` varchar(50) NOT NULL,
+  `CPU` varchar(50) NOT NULL,
+  `TYPE` varchar(50) NOT NULL,
+  `text` varchar(1000) NOT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
