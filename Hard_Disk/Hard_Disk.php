@@ -36,8 +36,10 @@ $resultado = mysqli_query($conn, $consulta);
                 <td><?php echo $row['Age']; ?></td>
                 <td><?php echo $row['Model']; ?></td> 
                 <td>
+                    <a href="edit-hard-disk.php?id=<?php echo $row['Id']; ?>" class="btn-edit">Modificare</a>
                     <a href="db_operations.php?delete_id=<?php echo $row['Id']; ?>" 
                        onclick="return confirm('Confermi l\'eliminazione?');">Elimina</a>
+                       
                 </td>
             </tr>
             <?php } ?>

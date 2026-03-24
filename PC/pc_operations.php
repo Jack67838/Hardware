@@ -38,4 +38,25 @@ if (isset($_GET['delete_id'])) {
     $stmt->close();
     exit();
 }
+
+// UPDATE PC
+if(isset($_POST['update_pc'])){
+    $id = $_POST['id'];
+    $PC = $_POST['PC'];
+    $RAM = $_POST['RAM'];
+    $CPU = $_POST['CPU'];
+    $TYPE = $_POST['TYPE'];
+    $TEXT = $_POST['Text'];
+
+    $stmt = $conn->prepare("UPDATE pc SET PC=?, RAM=?, CPU=?, `TYPE`=?, `text`=? WHERE Id=?");
+    $stmt->bind_param("sssssi", $PC, $RAM, $CPU, $TYPE, $TEXT, $id);
+
+    if($stmt->execute()){
+        header("Location: pc.php"); 
+    } else {
+        header("Location: edit-pc.php?id=$id&error=1");
+    }
+    $stmt->close();
+    exit();
+}
 ?>

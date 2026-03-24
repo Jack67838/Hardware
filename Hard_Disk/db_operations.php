@@ -38,4 +38,25 @@ if (isset($_GET['delete_id'])) {
     $stmt->close();
     exit();
 }
+
+// UPDATE DISCO
+if(isset($_POST['update_data'])){
+    $id = $_POST['id'];
+    $SN = $_POST['S/N'];
+    $Space = $_POST['Space'];
+    $Age = $_POST['Age'];
+    $Model = $_POST['Model'];
+
+    $stmt = $conn->prepare("UPDATE hard_disk SET `S/N` = ?, Space = ?, Age = ?, Model = ? WHERE Id = ?");
+    $stmt->bind_param("ssssi", $SN, $Space, $Age, $Model, $id);
+
+    if($stmt->execute()){
+        $_SESSION['status'] = "Aggiornato con successo";
+        header("Location: Hard_Disk.php"); 
+    } else {
+        header("Location: edit-hard-disk.php?id=$id&error=1");
+    }
+    $stmt->close();
+    exit();
+}
 ?>

@@ -38,6 +38,7 @@ $resultado = mysqli_query($conn, $consulta);
                 <td><?php echo $row['TYPE']; ?></td> 
                 <td><?php echo $row['text']; ?></td>
                 <td>
+                    <a href="edit-pc.php?id=<?php echo $row['Id']; ?>">Modificare</a>
                     <a href="pc_operations.php?delete_id=<?php echo $row['Id']; ?>" 
                        onclick="return confirm('Sei sicuro di voler eliminare questo PC?');">Elimina</a>
                 </td>

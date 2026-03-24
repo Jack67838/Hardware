@@ -37,4 +37,24 @@ if (isset($_GET['delete_id'])) {
     $stmt->close();
     exit();
 }
+
+// UPDATE RAM
+if(isset($_POST['update_ram'])){
+    $id = $_POST['id'];
+    $Manufacturer = $_POST['Manufacturer'];
+    $PN = $_POST['P/N'];
+    $Capacity = $_POST['Capacity'];
+    $Model = $_POST['Model'];
+
+    $stmt = $conn->prepare("UPDATE ram SET Manufacturer=?, `P/N`=?, Capacity=?, Model=? WHERE Id=?");
+    $stmt->bind_param("ssssi", $Manufacturer, $PN, $Capacity, $Model, $id);
+
+    if($stmt->execute()){
+        header("Location: ram.php"); 
+    } else {
+        header("Location: edit-ram.php?id=$id&error=1");
+    }
+    $stmt->close();
+    exit();
+}
 ?>

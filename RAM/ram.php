@@ -36,6 +36,7 @@ $resultado = mysqli_query($conn, $consulta);
                 <td><?php echo $row['Capacity']; ?></td>
                 <td><?php echo $row['Model']; ?></td> 
                 <td>
+                    <a href="edit-ram.php?id=<?php echo $row['Id']; ?>">Modificare</a>
                     <a href="ram_operations.php?delete_id=<?php echo $row['Id']; ?>" 
                        onclick="return confirm('Confermi l\'eliminazione?');">Elimina</a>
                 </td>
