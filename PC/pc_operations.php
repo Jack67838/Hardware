@@ -8,10 +8,12 @@ if(isset($_POST['save_pc'])){
     $RAM = $_POST['RAM'];
     $CPU = $_POST['CPU'];
     $TYPE = $_POST['TYPE'];
+    $RAM_Installed = $_POST['RAM_Installed'];
+    $CPU_Installed = $_POST['CPU_Installed'];
     $TEXT = $_POST['Text'];
 
-    $stmt = $conn->prepare("INSERT INTO pc (PC, RAM, CPU, `TYPE`, `text`) VALUES (?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssss", $PC, $RAM, $CPU, $TYPE, $TEXT);
+    $stmt = $conn->prepare("INSERT INTO pc (PC, RAM, CPU, `TYPE`, `RAM_Installed`, `CPU_Installed`, `text`) VALUES (?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssssss", $PC, $RAM, $CPU, $TYPE, $RAM_Installed, $CPU_Installed, $TEXT);
 
     if($stmt->execute()){
         $_SESSION['status'] = "PC inserito con successo";
@@ -47,14 +49,16 @@ if(isset($_POST['update_pc'])){
     $CPU = $_POST['CPU'];
     $TYPE = $_POST['TYPE'];
     $TEXT = $_POST['Text'];
+    $RAM_Installed = $_POST['RAM_Installed'];
+    $CPU_Installed = $_POST['CPU_Installed'];
 
-    $stmt = $conn->prepare("UPDATE pc SET PC=?, RAM=?, CPU=?, `TYPE`=?, `text`=? WHERE Id=?");
-    $stmt->bind_param("sssssi", $PC, $RAM, $CPU, $TYPE, $TEXT, $id);
+    $stmt = $conn->prepare("UPDATE pc SET PC=?, RAM=?, CPU=?, `TYPE`=?, `RAM_Installed`=?, `CPU_Installed`=?, `text`=? WHERE Id=?");
+    $stmt->bind_param("sssssssi", $PC, $RAM, $CPU, $TYPE, $RAM_Installed, $CPU_Installed, $TEXT, $id);
 
     if($stmt->execute()){
         header("Location: pc.php"); 
     } else {
-        header("Location: edit-pc.php?id=$id&error=1");
+        header("Location: edit-pc.php?id=" . $id . "&error=1");
     }
     $stmt->close();
     exit();

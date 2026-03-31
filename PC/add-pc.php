@@ -11,17 +11,17 @@
         
         <form action="pc_operations.php" method="POST">
             <div class="add">
-                <label>PC</label><br>
+                <label>Produttore</label><br>
                 <input type="text" name="PC" required autocomplete="off">
             </div>
 
             <div class="add">
-                <label>RAM</label><br>
+                <label>Tipo RAM</label><br>
                 <input type="text" name="RAM" required autocomplete="off"/>
             </div>
 
             <div class="add">
-                <label>CPU</label><br>
+                <label>Modello CPU</label><br>
                 <input type="text" name="CPU" required autocomplete="off"/>
             </div>
 
@@ -32,6 +32,24 @@
 
                 <input type="radio" id="desktop" name="TYPE" value="Desktop">
                 <label for="desktop" class="radio-button">Desktop</label>
+            </div>
+            
+            <div class="add">
+                <label>RAM Installata</label><br>
+                <input type="radio" id="ram_si" name="RAM_Installed" value="SÌ" required>
+                <label for="ram_si" class="radio-button">SÌ</label>
+
+                <input type="radio" id="ram_no" name="RAM_Installed" value="NO">
+                <label for="ram_no" class="radio-button">NO</label>
+            </div>
+
+            <div class="add">
+                <label>CPU Installata</label><br>
+                <input type="radio" id="cpu_si" name="CPU_Installed" value="SÌ" required>
+                <label for="cpu_si" class="radio-button">SÌ</label>
+
+                <input type="radio" id="cpu_no" name="CPU_Installed" value="NO">
+                <label for="cpu_no" class="radio-button">NO</label>
             </div>
 
             <div class="add">

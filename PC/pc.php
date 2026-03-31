@@ -7,7 +7,7 @@ $resultado = mysqli_query($conn, $consulta);
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>Hardware - PC</title>
+    <title>Hardware - Elenco PC</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -20,10 +20,12 @@ $resultado = mysqli_query($conn, $consulta);
         <thead>
             <tr>
                 <th>ID</th>
-                <th>PC</th>
-                <th>RAM</th>
-                <th>CPU</th>
+                <th>Produttore</th>
+                <th>Tipo RAM</th>
+                <th>Modello CPU</th>
                 <th>Tipo</th>
+                <th>RAM Installata</th>
+                <th>CPU Installata</th>
                 <th>Descrizione</th>
                 <th>Azioni</th>
             </tr>
@@ -36,9 +38,11 @@ $resultado = mysqli_query($conn, $consulta);
                 <td><?php echo $row['RAM']; ?></td>
                 <td><?php echo $row['CPU']; ?></td>
                 <td><?php echo $row['TYPE']; ?></td> 
+                <td><?php echo $row['RAM_Installed']; ?></td>
+                <td><?php echo $row['CPU_Installed']; ?></td>
                 <td><?php echo $row['text']; ?></td>
                 <td>
-                    <a href="edit-pc.php?id=<?php echo $row['Id']; ?>">Modificare</a>
+                    <a href="edit-pc.php?id=<?php echo $row['Id']; ?>">Modifica</a>
                     <a href="pc_operations.php?delete_id=<?php echo $row['Id']; ?>" 
                        onclick="return confirm('Sei sicuro di voler eliminare questo PC?');">Elimina</a>
                 </td>
