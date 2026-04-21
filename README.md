@@ -1,12 +1,19 @@
--- En el http://localhost/phpmyadmin hay que crear varios bases de datos:
+En el http://localhost/phpmyadmin hay que crear varios bases de datos:
 
--- Creación de la base de datos
 CREATE DATABASE IF NOT EXISTS `hardware`;
 USE `hardware`;
 
--- --------------------------------------------------------
--- Estructura y datos para la tabla `ram`
--- --------------------------------------------------------
+CREATE TABLE `usuarios` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `username` (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `usuarios` (`id`, `username`, `password`, `created_at`) VALUES
+(1, 'admin', 'admin', '2026-03-16 16:11:23');
 
 CREATE TABLE `ram` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
@@ -14,16 +21,11 @@ CREATE TABLE `ram` (
   `P/N` varchar(100) NOT NULL,
   `Capacity` varchar(50) NOT NULL,
   `Model` varchar(50) NOT NULL,
-  `Installed` varchar(10) NOT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO `ram` (`Manufacturer`, `P/N`, `Capacity`, `Model`, `Installed`) VALUES
-('ASint', 'SLA302G08-GGNHC', '4gb', 'DDR3', 'NO');
-
--- --------------------------------------------------------
--- Estructura y datos para la tabla `hard_disk`
--- --------------------------------------------------------
+INSERT INTO `ram` (`Id`, `Manufacturer`, `P/N`, `Capacity`, `Model`) VALUES
+(1, 'ASint', 'SLA302G08-GGNHC', '4gb', 'DDR3');
 
 CREATE TABLE `hard_disk` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
@@ -31,16 +33,11 @@ CREATE TABLE `hard_disk` (
   `Space` varchar(50) NOT NULL,
   `Age` varchar(50) NOT NULL,
   `Model` varchar(50) NOT NULL,
-  `Installed` varchar(10) NOT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO `hard_disk` (`S/N`, `Space`, `Age`, `Model`, `Installed`) VALUES
-('WCAV2AD11035', '320GB', '9543H', 'Western Digital', 'NO');
-
--- --------------------------------------------------------
--- Estructura y datos para la tabla `pc`
--- --------------------------------------------------------
+INSERT INTO `hard_disk` (`Id`, `S/N`, `Space`, `Age`, `Model`) VALUES
+(1, 'WCAV2AD11035', '320GB', '9543H', 'Western Digital');
 
 CREATE TABLE `pc` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
@@ -48,12 +45,6 @@ CREATE TABLE `pc` (
   `RAM` varchar(50) NOT NULL,
   `CPU` varchar(50) NOT NULL,
   `TYPE` varchar(50) NOT NULL,
-  `RAM_Installed` varchar(5) NOT NULL,
-  `CPU_Installed` varchar(5) NOT NULL,
   `text` varchar(1000) NOT NULL,
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
-INSERT INTO `pc` (`PC`, `RAM`, `CPU`, `TYPE`, `RAM_Installed`, `CPU_Installed`, `text`) VALUES
-('cszcszc', 'fgsggdrg', 'zsczsc', 'Desktop', 'SÍ', 'SÍ', 'Note'),
-('ko', 'kop', 'kpokpo', 'Laptop', 'SÍ', 'SÍ', 'da');
