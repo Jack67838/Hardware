@@ -35,18 +35,28 @@ if(!$disco) {
                 <label>Numero di serie</label><br>
                 <input type="text" name="S/N" value="<?php echo $disco['S/N']; ?>" required autocomplete="off">
             </div>
+
             <div class="add">
                 <label>Spazio</label><br>
                 <input type="text" name="Space" value="<?php echo $disco['Space']; ?>" required autocomplete="off">
             </div>
+
             <div class="add">
                 <label>Età / Anno</label><br>
                 <input type="text" name="Age" value="<?php echo $disco['Age']; ?>" required autocomplete="off">
             </div>
+
             <div class="add">
                 <label>Modello</label><br>
                 <input type="text" name="Model" value="<?php echo $disco['Model']; ?>" required autocomplete="off"> 
+            <div class="add">
+                <input type="radio" id="SI" name="Installed" value="SÌ" <?php echo ($disco['Installed'] == 'SÌ') ? 'checked' : ''; ?> required>
+                <label for="SI" class="radio-button">SÌ</label>
+
+                <input type="radio" id="NO" name="Installed" value="NO" <?php echo ($disco['Installed'] == 'NO') ? 'checked' : ''; ?>>
+                <label for="NO" class="radio-button">NO</label>
             </div>
+
             <div class="add">
                 <button type="submit" name="update_data" class='btn'>Aggiorna Dati</button><br><br>
                 <a href="Hard_Disk.php" class='btn'>Annulla</a>

@@ -7,12 +7,12 @@ $resultado = mysqli_query($conn, $consulta);
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>Hardware - RAM</title>
+    <title>RAM</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <h1>Elenco RAM</h1>
-    <div style="margin-bottom: 20px;">
+    <h1 class='container-header'>Elenco RAM</h1>
+    <div style="margin-left: 90px">
         <a href="../menu.html" class='btn'>Menu</a>
         <a href="add-ram.php" class="btn">Aggiungi Nuova RAM</a>
     </div><br>
@@ -24,6 +24,7 @@ $resultado = mysqli_query($conn, $consulta);
                 <th>P/N</th>
                 <th>Capacità</th>
                 <th>Modello</th>
+                <th>Installato</th>
                 <th>Azione</th>
             </tr>
         </thead>
@@ -35,8 +36,9 @@ $resultado = mysqli_query($conn, $consulta);
                 <td><?php echo $row['P/N']; ?></td>
                 <td><?php echo $row['Capacity']; ?></td>
                 <td><?php echo $row['Model']; ?></td> 
+                <td><?php echo $row['Installed']; ?></td> 
                 <td>
-                    <a href="edit-ram.php?id=<?php echo $row['Id']; ?>">Modificare</a>
+                    <a class='btn-edit' href="edit-ram.php?id=<?php echo $row['Id']; ?>">Modificare</a>
                     <a href="ram_operations.php?delete_id=<?php echo $row['Id']; ?>" 
                        onclick="return confirm('Confermi l\'eliminazione?');">Elimina</a>
                 </td>

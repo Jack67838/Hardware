@@ -2,6 +2,11 @@ body{
     font-family: Verdana, Geneva, sans-serif;
     background-color: #F7F7F7;
 }
+h1 {
+    text-align: center;
+    color: #333;
+    margin-top: 40px;
+}
 .log{
      width: 100%;
      max-width: 220px;
@@ -28,6 +33,13 @@ table,th,td{
 .add{
     padding: 5px 10px;
 }
+.container-header {
+    width: 90%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
 .btn{
     background-color:lightblue;
     border: none;
@@ -36,4 +48,92 @@ table,th,td{
     padding: 10px 20px;
     text-decoration: none; 
     color: inherit;
+}
+.btn-edit {
+    color: #2c3e50;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.btn-edit:hover {
+    color: #3498db;
+}
+
+a[onclick] {
+    color: #e74c3c;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a[onclick]:hover {
+    text-decoration: underline;
+}
+table {
+    width: 90%;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+th {
+    background-color: #333;
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #e9ecef;
+}
+input[type="text"], 
+input[type="number"], 
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+input:focus {
+    outline: none;
+    border-color: lightblue;
+    box-shadow: 0 0 5px rgba(173, 216, 230, 0.5);
+}
+textarea {
+    width: 100%;
+    max-width: 100%; 
+    min-height: 100px; 
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 14px;
+
+}
+
+textarea:focus {
+    outline: none;
+    border-color: lightblue;
+    box-shadow: 0 0 5px rgba(173, 216, 230, 0.5);
 }

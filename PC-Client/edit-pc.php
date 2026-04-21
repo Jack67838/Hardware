@@ -1,7 +1,7 @@
 <?php 
 require '../php/db.php';
 $id = $_GET['id'];
-$stmt = $conn->prepare("SELECT * FROM pc WHERE Id = ?");
+$stmt = $conn->prepare("SELECT * FROM pc_client WHERE Id = ?");
 $stmt->bind_param("i", $id);
 $stmt->execute();
 $pc = $stmt->get_result()->fetch_assoc();
@@ -18,6 +18,11 @@ $pc = $stmt->get_result()->fetch_assoc();
         <h1>Modifica PC</h1>
         <form action="pc_operations.php" method="POST">
             <input type="hidden" name="id" value="<?php echo $pc['Id']; ?>">
+
+            <div class="add">
+                <label>Client</label><br>
+                <input type="text" name="Client" value="<?php echo $pc['Client']; ?>" required autocomplete="off">
+            </div>
             
             <div class="add">
                 <label>Produttore</label><br>
@@ -72,7 +77,7 @@ $pc = $stmt->get_result()->fetch_assoc();
             <div class="add">
                 <button type="submit" name="update_pc" class='btn'>Aggiorna Dati</button>
                 <br><br>
-                <a href="pc.php" class='btn'>Annulla</a>
+                <a href="pc-client.php" class='btn'>Annulla</a>
             </div>
         </form>
     </div> 

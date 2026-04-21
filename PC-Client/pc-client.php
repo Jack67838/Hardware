@@ -1,17 +1,17 @@
 <?php 
 require '../php/db.php';
-$consulta = "SELECT * FROM pc";
+$consulta = "SELECT * FROM pc_client";
 $resultado = mysqli_query($conn, $consulta);
 ?>
 <!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>Elenco PC</title>
+    <title>PC Clienti</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <h1 class='container-header'>Elenco PC</h1>
+    <h1 class='container-header'>PC Clienti</h1>
     <div style="margin-left: 90px">
         <a href="../menu.html" class='btn'>Menu</a>
         <a href="add-pc.php" class="btn">Aggiungi Nuovo PC</a>
@@ -20,6 +20,7 @@ $resultado = mysqli_query($conn, $consulta);
         <thead>
             <tr>
                 <th>ID</th>
+                <th>Clienti</th>
                 <th>Produttore</th>
                 <th>Tipo RAM</th>
                 <th>Modello CPU</th>
@@ -34,6 +35,7 @@ $resultado = mysqli_query($conn, $consulta);
             <?php while($row = mysqli_fetch_array($resultado)) { ?>
             <tr>
                 <td><?php echo $row['Id']; ?></td>
+                <td><?php echo $row['Client']; ?></td>
                 <td><?php echo $row['PC']; ?></td>
                 <td><?php echo $row['RAM']; ?></td>
                 <td><?php echo $row['CPU']; ?></td>

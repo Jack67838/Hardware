@@ -8,8 +8,13 @@
 <body>
     <div class="new">
         <h1>Aggiungi Nuovo PC</h1>
-        
         <form action="pc_operations.php" method="POST">
+
+            <div class="add">
+                <label>Client</label><br>
+                <input type="text" name="Client" required autocomplete="off">
+            </div>
+
             <div class="add">
                 <label>Produttore</label><br>
                 <input type="text" name="PC" required autocomplete="off">
@@ -63,7 +68,7 @@
             <div class="add">
                 <button type="submit" name="save_pc" class='btn'>Salva Dati</button>
                 <br><br>
-                <a href="pc.php" class='btn'>Torna indietro</a>
+                <a href="pc-client.php" class='btn'>Torna indietro</a>
             </div>
         </form>
     </div> 

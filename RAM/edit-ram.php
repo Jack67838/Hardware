@@ -34,6 +34,13 @@ $ram = $stmt->get_result()->fetch_assoc();
                 <label>Modello</label><br>
                 <input type="text" name="Model" value="<?php echo $ram['Model']; ?>" required autocomplete="off"/>
             </div>
+                <div class="add">
+                <input type="radio" id="SI" name="Installed" value="SÌ" <?php echo ($ram['Installed'] == 'SÌ') ? 'checked' : ''; ?> required>
+                <label for="SI" class="radio-button">SÌ</label>
+
+                <input type="radio" id="NO" name="Installed" value="NO" <?php echo ($ram['Installed'] == 'NO') ? 'checked' : ''; ?>>
+                <label for="NO" class="radio-button">NO</label>
+            </div>
             <div class="add">
                 <button type="submit" name="update_ram" class='btn'>Aggiorna Dati</button><br><br>
                 <a href="ram.php" class='btn'>Annulla</a>

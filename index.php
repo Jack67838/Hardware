@@ -14,7 +14,7 @@
             <input type="text" name="user" placeholder="Nome utente" required><br><br>
             
             <label>Password</label><br>
-            <input type="password" name="password" placeholder="Password" required>
+            <input type="password" name="password" placeholder="Password" required><br><br>
 
             <div class="re">
                 <button type="submit"> Accedi</button>

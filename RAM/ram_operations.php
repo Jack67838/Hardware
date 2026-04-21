@@ -8,9 +8,11 @@ if(isset($_POST['save_ram'])){
     $PN = $_POST['P/N'];
     $Capacity = $_POST['Capacity'];
     $Model = $_POST['Model'];
+    $Installed = $_POST['Installed'];
+    
 
-    $stmt = $conn->prepare("INSERT INTO ram (Manufacturer, `P/N`, Capacity, Model) VALUES (?, ?, ?, ?)");
-    $stmt->bind_param("ssss", $Manufacturer, $PN, $Capacity, $Model);
+    $stmt = $conn->prepare("INSERT INTO ram (Manufacturer, `P/N`, Capacity, Model, Installed) VALUES (?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssss", $Manufacturer, $PN, $Capacity, $Model, $Installed);
 
     if($stmt->execute()){
         $_SESSION['status'] = "RAM inserita con successo";
@@ -45,9 +47,11 @@ if(isset($_POST['update_ram'])){
     $PN = $_POST['P/N'];
     $Capacity = $_POST['Capacity'];
     $Model = $_POST['Model'];
+    $Installed = $_POST['Installed'];
 
-    $stmt = $conn->prepare("UPDATE ram SET Manufacturer=?, `P/N`=?, Capacity=?, Model=? WHERE Id=?");
-    $stmt->bind_param("ssssi", $Manufacturer, $PN, $Capacity, $Model, $id);
+
+    $stmt = $conn->prepare("UPDATE ram SET Manufacturer=?, `P/N`=?, Capacity=?, Model=?, Installed=? WHERE Id=?");
+    $stmt->bind_param("sssssi", $Manufacturer, $PN, $Capacity, $Model, $Installed, $id);
 
     if($stmt->execute()){
         header("Location: ram.php"); 

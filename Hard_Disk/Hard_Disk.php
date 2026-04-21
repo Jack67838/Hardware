@@ -7,12 +7,12 @@ $resultado = mysqli_query($conn, $consulta);
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>Hardware - Elenco</title>
+    <title>Hardware</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <h1>Disco Rigido</h1>
-    <div style="margin-bottom: 20px;">
+    <h1 class='container-header'>Disco Rigido</h1>
+    <div style="margin-left: 90px;">
         <a href="../menu.html" class='btn'>Menu</a>
         <a href="add-hard-disk.php" class="btn">Aggiungi nuovo disco</a>
     </div><br>
@@ -24,6 +24,7 @@ $resultado = mysqli_query($conn, $consulta);
                 <th>Spazio</th>
                 <th>Età</th>
                 <th>Modello</th>
+                <th>Installato</th>
                 <th>Azione</th>
             </tr>
         </thead>
@@ -35,8 +36,9 @@ $resultado = mysqli_query($conn, $consulta);
                 <td><?php echo $row['Space']; ?></td>
                 <td><?php echo $row['Age']; ?></td>
                 <td><?php echo $row['Model']; ?></td> 
+                <td><?php echo $row['Installed']; ?></td> 
                 <td>
-                    <a href="edit-hard-disk.php?id=<?php echo $row['Id']; ?>" class="btn-edit">Modificare</a>
+                    <a class='btn-edit' href="edit-hard-disk.php?id=<?php echo $row['Id']; ?>" class="btn-edit">Modificare</a>
                     <a href="db_operations.php?delete_id=<?php echo $row['Id']; ?>" 
                        onclick="return confirm('Confermi l\'eliminazione?');">Elimina</a>
                        
