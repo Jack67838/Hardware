@@ -20,9 +20,9 @@ $resultado = mysqli_query($conn, $consulta);
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Produttore</th>
-                <th>Tipo RAM</th>
-                <th>Modello CPU</th>
+                <th>Modello</th>
+                <th>RAM</th>
+                <th>CPU</th>
                 <th>Tipo</th>
                 <th>RAM Installata</th>
                 <th>CPU Installata</th>

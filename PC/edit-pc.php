@@ -20,17 +20,17 @@ $pc = $stmt->get_result()->fetch_assoc();
             <input type="hidden" name="id" value="<?php echo $pc['Id']; ?>">
             
             <div class="add">
-                <label>Produttore</label><br>
+                <label>Modello</label><br>
                 <input type="text" name="PC" value="<?php echo $pc['PC']; ?>" required autocomplete="off">
             </div>
 
             <div class="add">
-                <label>Tipo RAM</label><br>
+                <label>RAM</label><br>
                 <input type="text" name="RAM" value="<?php echo $pc['RAM']; ?>" required autocomplete="off"/>
             </div>
 
             <div class="add">
-                <label>Modello CPU</label><br>
+                <label>CPU</label><br>
                 <input type="text" name="CPU" value="<?php echo $pc['CPU']; ?>" required autocomplete="off"/>
             </div>
 
@@ -41,6 +41,12 @@ $pc = $stmt->get_result()->fetch_assoc();
 
                 <input type="radio" id="desktop" name="TYPE" value="Desktop" <?php echo ($pc['TYPE'] == 'Desktop') ? 'checked' : ''; ?>>
                 <label for="desktop" class="radio-button">Desktop</label><br>
+
+                <input type="radio" id="server" name="TYPE" value="server" <?php echo ($pc['TYPE'] == 'server') ? 'checked' : ''; ?>>
+                <label for="server" class="radio-button">Server</label>
+
+                <input type="radio" id="mini-pc" name="TYPE" value="mini-pc" <?php echo ($pc['TYPE'] == 'mini-pc') ? 'checked' : ''; ?>>
+                <label for="mini-pc" class="radio-button">Mini-pc</label><br>
 
                 <input type="radio" id="All in one" name="TYPE" value="All in one" <?php echo ($pc['TYPE'] == 'All in one') ? 'checked' : ''; ?>>
                 <label for="All in one" class="radio-button">All in one</label>

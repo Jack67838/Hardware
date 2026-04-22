@@ -11,17 +11,17 @@
         
         <form action="pc_operations.php" method="POST">
             <div class="add">
-                <label>Produttore</label><br>
+                <label>Modello</label><br>
                 <input type="text" name="PC" required autocomplete="off">
             </div>
 
             <div class="add">
-                <label>Tipo RAM</label><br>
+                <label>RAM</label><br>
                 <input type="text" name="RAM" required autocomplete="off"/>
             </div>
 
             <div class="add">
-                <label>Modello CPU</label><br>
+                <label>CPU</label><br>
                 <input type="text" name="CPU" required autocomplete="off"/>
             </div>
 
@@ -32,6 +32,12 @@
 
                 <input type="radio" id="desktop" name="TYPE" value="Desktop">
                 <label for="desktop" class="radio-button">Desktop</label><br>
+
+                <input type="radio" id="server" name="TYPE" value="server" required>
+                <label for="server" class="radio-button">Server</label>
+
+                <input type="radio" id="mini-pc" name="TYPE" value="mini-pc" required>
+                <label for="mini-pc" class="radio-button">Mini-pc</label><br>
 
                 <input type="radio" id="All in one" name="TYPE" value="All in one">
                 <label for="All in one" class="radio-button">All in one</label>
