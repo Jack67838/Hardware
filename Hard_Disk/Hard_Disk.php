@@ -24,7 +24,6 @@ $resultado = mysqli_query($conn, $consulta);
                 <th>Spazio</th>
                 <th>Età</th>
                 <th>Modello</th>
-                <th>Installato</th>
                 <th>Azione</th>
             </tr>
         </thead>
@@ -36,12 +35,10 @@ $resultado = mysqli_query($conn, $consulta);
                 <td><?php echo $row['Space']; ?></td>
                 <td><?php echo $row['Age']; ?></td>
                 <td><?php echo $row['Model']; ?></td> 
-                <td><?php echo $row['Installed']; ?></td> 
                 <td>
-                    <a class='btn-edit' href="edit-hard-disk.php?id=<?php echo $row['Id']; ?>" class="btn-edit">Modificare</a>
+                    <a class='btn-edit' href="edit-hard-disk.php?id=<?php echo $row['Id']; ?>">Modificare</a>
                     <a href="db_operations.php?delete_id=<?php echo $row['Id']; ?>" 
                        onclick="return confirm('Confermi l\'eliminazione?');">Elimina</a>
-                       
                 </td>
             </tr>
             <?php } ?>

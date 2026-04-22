@@ -26,14 +26,6 @@
                 <input type="text" name="Model" required autocomplete="off"/>
             </div>
             <div class="add">
-                <label>installato</label><br>
-                <input type="radio" id="SÍ" name="Installed" value="SÍ" required>
-                <label for="SÍ" class="radio-button">SÍ</label>
-
-                <input type="radio" id="No" name="Installed" value="No">
-                <label for="No" class="radio-button">NO</label>
-            </div>
-            <div class="add">
                 <button type="submit" name="save_data" class='btn'>Salva Dati</button><br><br>
                 <a href="Hard_Disk.php" class='btn'>Torna indietro</a>
             </div>

@@ -29,7 +29,7 @@ if(!$disco) {
     <div class="new">
         <h1>Modifica disco rigido</h1>
         <form action="db_operations.php" method="POST">
-            <input  type="hidden" name="id" autocomplete="off" value="<?php echo $disco['Id']; ?>">
+            <input type="hidden" name="id" autocomplete="off" value="<?php echo $disco['Id']; ?>">
 
             <div class="add">
                 <label>Numero di serie</label><br>
@@ -48,13 +48,7 @@ if(!$disco) {
 
             <div class="add">
                 <label>Modello</label><br>
-                <input type="text" name="Model" value="<?php echo $disco['Model']; ?>" required autocomplete="off"> 
-            <div class="add">
-                <input type="radio" id="SI" name="Installed" value="SÌ" <?php echo ($disco['Installed'] == 'SÌ') ? 'checked' : ''; ?> required>
-                <label for="SI" class="radio-button">SÌ</label>
-
-                <input type="radio" id="NO" name="Installed" value="NO" <?php echo ($disco['Installed'] == 'NO') ? 'checked' : ''; ?>>
-                <label for="NO" class="radio-button">NO</label>
+                <input type="text" name="Model" value="<?php echo $disco['Model']; ?>" required autocomplete="off">
             </div>
 
             <div class="add">

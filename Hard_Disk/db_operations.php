@@ -8,11 +8,9 @@ if(isset($_POST['save_data'])){
     $Space = $_POST['Space'];
     $Age = $_POST['Age'];
     $Model = $_POST['Model'];
-    $Installed = $_POST['Installed'];
-
     
-    $stmt = $conn->prepare("INSERT INTO hard_disk (`S/N`, Space, Age, Model, Installed) VALUES (?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssss", $SN, $Space, $Age, $Model, $Installed);
+    $stmt = $conn->prepare("INSERT INTO hard_disk (`S/N`, Space, Age, Model) VALUES (?, ?, ?, ?)");
+    $stmt->bind_param("ssss", $SN, $Space, $Age, $Model);
 
     if($stmt->execute()){
         $_SESSION['status'] = "Inserito con successo";
@@ -47,10 +45,9 @@ if(isset($_POST['update_data'])){
     $Space = $_POST['Space'];
     $Age = $_POST['Age'];
     $Model = $_POST['Model'];
-    $Installed = $_POST['Installed'];
 
-    $stmt = $conn->prepare("UPDATE hard_disk SET `S/N`=?, Space=?, Age=?, Model=?, Installed=? WHERE id=?");
-    $stmt->bind_param("sssssi", $SN, $Space, $Age, $Model, $Installed, $id);
+    $stmt = $conn->prepare("UPDATE hard_disk SET `S/N`=?, Space=?, Age=?, Model=? WHERE id=?");
+    $stmt->bind_param("ssssi", $SN, $Space, $Age, $Model, $id);
 
     if($stmt->execute()){
         $_SESSION['status'] = "Aggiornato con successo";
