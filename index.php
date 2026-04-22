@@ -16,7 +16,7 @@
             <label>Password</label><br>
             <input type="password" name="password" placeholder="Password" required><br><br>
 
-            <div class="re">
+            <div>
                 <button type="submit"> Accedi</button>
             </div>
         </form>
